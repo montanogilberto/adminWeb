@@ -1,0 +1,33 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @customer.adress %>
+</p>
+
+<p>
+  <strong>Adress2:</strong>
+  <%= @customer.adress2 %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @customer.celular %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @customer.user %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
