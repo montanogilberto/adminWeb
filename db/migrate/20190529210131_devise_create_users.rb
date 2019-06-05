@@ -34,7 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :userName
       t.string :cedula
-      t.int :permission_level
+      t.integer :permission_level
       t.string :phone
 
       t.timestamps null: false
