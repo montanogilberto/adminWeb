@@ -6,7 +6,6 @@ one:
   adress2: MyString
   email: MyString
   celular: MyString
-  user: one
 
 two:
   name: MyString
@@ -14,4 +13,3 @@ two:
   adress2: MyString
   email: MyString
   celular: MyString
-  user: two

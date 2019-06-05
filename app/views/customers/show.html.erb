@@ -1,33 +1,29 @@
+<div class="form-group col-sm-8">
+  <p>
+    <strong>Nombre:</strong>
+    <%= @customer.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
-</p>
+  <p>
+    <strong>Domicilio Particular:</strong>
+    <%= @customer.adress %>
+  </p>
 
-<p>
-  <strong>Adress:</strong>
-  <%= @customer.adress %>
-</p>
+  <p>
+    <strong>Domicilio Notificación:</strong>
+    <%= @customer.adress2 %>
+  </p>
 
-<p>
-  <strong>Adress2:</strong>
-  <%= @customer.adress2 %>
-</p>
+  <p>
+    <strong>Correo Electronico:</strong>
+    <%= @customer.email %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
+  <p>
+    <strong>Celular:</strong>
+    <%= @customer.celular %>
+  </p>
 
-<p>
-  <strong>Celular:</strong>
-  <%= @customer.celular %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @customer.user %>
-</p>
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+  <%= link_to 'Modificar', edit_customer_path(@customer), class: "btn btn-primary" %> |
+  <%= link_to 'Regresar', customers_path, class: "btn btn-primary" %>
+<div class="form-group col-sm-8">
