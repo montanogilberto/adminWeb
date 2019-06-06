@@ -1,0 +1,9 @@
+<div class="form-group col-sm-8">
+	<h3>Editar Tipos Clientes</h3>
+</div>
+
+<%= render 'form', customer_type: @customer_type %>
+<div class="form-group col-sm-8">
+	<%= link_to 'Mostrar', @customer_type, class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', customer_types_path, class: "btn btn-primary" %>
+</div>

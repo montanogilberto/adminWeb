@@ -1,9 +1,8 @@
 <div class="form-group col-sm-8">
 	<h4>Editar Clientes/Contrarios</h4>
 </div>
-
+<%= render 'form', customer: @customer %>
 <div class="form-group col-sm-8">
-	<%= render 'form', customer: @customer %>
 	<%= link_to 'Consultar', @customer, class: "btn btn-primary" %> |
 	<%= link_to 'Regresar', customers_path, class: "btn btn-primary" %>
 </div>
