@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Expedients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Noexpedient</th>
+      <th>Year</th>
+      <th>Active</th>
+      <th>Actor</th>
+      <th>Defendant</th>
+      <th>Customer</th>
+      <th>Fee</th>
+      <th>Payment</th>
+      <th>Saldo</th>
+      <th>Court</th>
+      <th>State</th>
+      <th>District</th>
+      <th>Act</th>
+      <th>Matter</th>
+      <th>Judgment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expedients.each do |expedient| %>
+      <tr>
+        <td><%= expedient.NoExpedient %></td>
+        <td><%= expedient.year %></td>
+        <td><%= expedient.active %></td>
+        <td><%= expedient.actor %></td>
+        <td><%= expedient.defendant %></td>
+        <td><%= expedient.customer %></td>
+        <td><%= expedient.fee %></td>
+        <td><%= expedient.payment %></td>
+        <td><%= expedient.saldo %></td>
+        <td><%= expedient.court %></td>
+        <td><%= expedient.state %></td>
+        <td><%= expedient.district %></td>
+        <td><%= expedient.act %></td>
+        <td><%= expedient.matter %></td>
+        <td><%= expedient.judgment %></td>
+        <td><%= link_to 'Show', expedient %></td>
+        <td><%= link_to 'Edit', edit_expedient_path(expedient) %></td>
+        <td><%= link_to 'Destroy', expedient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expedient', new_expedient_path %>

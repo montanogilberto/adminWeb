@@ -24,6 +24,11 @@
     <%= @customer.celular %>
   </p>
 
+  <p>
+    <strong>Tipo Cliente:</strong>
+    <%= @customer.customer_type.name %>
+  </p>
+
   <%= link_to 'Modificar', edit_customer_path(@customer), class: "btn btn-primary" %> |
   <%= link_to 'Regresar', customers_path, class: "btn btn-primary" %>
 </div>

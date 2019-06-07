@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :expedients
+  resources :acts
+  resources :matters
+  resources :courts
+  resources :judgments
+  resources :districts
+  resources :states
   resources :customer_types
   resources :customers
   devise_for :users

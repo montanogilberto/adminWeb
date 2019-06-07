@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  NoExpedient: MyString
+  year: 2019-06-07 14:37:28
+  active: false
+  actor: MyString
+  defendant: MyString
+  customer: MyString
+  fee: 
+  payment: 
+  saldo: 
+  court: one
+  state: one
+  district: one
+  act: one
+  matter: one
+  judgment: one
+
+two:
+  NoExpedient: MyString
+  year: 2019-06-07 14:37:28
+  active: false
+  actor: MyString
+  defendant: MyString
+  customer: MyString
+  fee: 
+  payment: 
+  saldo: 
+  court: two
+  state: two
+  district: two
+  act: two
+  matter: two
+  judgment: two

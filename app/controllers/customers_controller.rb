@@ -1,11 +1,12 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except:[:show,:index]
 
   # GET /customers
   # GET /customers.json
   def index
     @customers = Customer.all
+    @customer_types = CustomerType.all
   end
 
   # GET /customers/1
@@ -26,7 +27,7 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = current_user.customers.new(customer_params)
-
+    @customer_type = @customer.customer_type_id
     respond_to do |format|
       if @customer.save
         format.html { redirect_to @customer, notice: 'El registro fue creado correctamente' }
@@ -63,6 +64,10 @@ class CustomersController < ApplicationController
   end
 
   private
+
+    def validate_user
+      redirect_to new_user_session_path, notice: "Se requiere iniciar sesión"
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
       @customer = Customer.find(params[:id])
@@ -70,6 +75,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:name, :adress, :adress2, :email, :celular)
+      params.require(:customer).permit(:name, :adress, :adress2, :email, :celular, :customer_type_id)
     end
 end

@@ -1,0 +1,22 @@
+<%= form_with(model: judgment, local: true) do |form| %>
+  <% if judgment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(judgment.errors.count, "error") %> prohibited this judgment from being saved:</h2>
+
+      <ul>
+      <% judgment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :judgment_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

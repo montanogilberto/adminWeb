@@ -12,6 +12,7 @@
         <th scope="col">Correo Electronico</th>
         <th scope="col">Celular</th>
         <th scope="col">Usurio</th>
+        <th scope="col">Tipo Cliente</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -25,6 +26,7 @@
           <td><%= customer.email %></td>
           <td><%= customer.celular %></td>
           <td><%= customer.user.email %></td>
+          <td><%= customer.customer_type.name %></td>
           <td><%= link_to 'Consultar', customer , class: "btn btn-outline-primary btn-sm"%></td>
           <td><%= link_to 'Modificar', edit_customer_path(customer) , class: "btn btn-outline-primary btn-sm"%></td>
           <td><%= link_to 'Eliminar', customer, method: :delete, data: { confirm: 'Estas Seguro?' } , class: "btn btn-outline-danger btn-sm"%></td>

@@ -40,10 +40,8 @@
     </div>
 
     <div class="form-group col-sm-8">
-    <label for="exampleFormControlSelect1">Tipo Cliente</label>
-      <select class="form-control">
-        <option>1</option>
-      </select>
+      <%= form.label :customer_type, "Tipo Cliente" %>
+      <%= form.collection_select(:customer_type_id, CustomerType.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
     </div>
 
     <div class="form-group col-sm-8">

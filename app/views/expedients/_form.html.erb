@@ -1,0 +1,92 @@
+<%= form_with(model: expedient, local: true) do |form| %>
+  <% if expedient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(expedient.errors.count, "error") %> prohibited this expedient from being saved:</h2>
+
+      <ul>
+      <% expedient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :NoExpedient %>
+    <%= form.text_field :NoExpedient, id: :expedient_NoExpedient %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.datetime_select :year, id: :expedient_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.check_box :active, id: :expedient_active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actor %>
+    <%= form.text_field :actor, id: :expedient_actor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :defendant %>
+    <%= form.text_field :defendant, id: :expedient_defendant %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer %>
+    <%= form.text_field :customer, id: :expedient_customer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fee %>
+    <%= form.text_field :fee, id: :expedient_fee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment %>
+    <%= form.text_field :payment, id: :expedient_payment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saldo %>
+    <%= form.text_field :saldo, id: :expedient_saldo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :court_id %>
+    <%= form.text_field :court_id, id: :expedient_court_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.text_field :state_id, id: :expedient_state_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :district_id %>
+    <%= form.text_field :district_id, id: :expedient_district_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :act_id %>
+    <%= form.text_field :act_id, id: :expedient_act_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matter_id %>
+    <%= form.text_field :matter_id, id: :expedient_matter_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :judgment_id %>
+    <%= form.text_field :judgment_id, id: :expedient_judgment_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -27,7 +27,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-          <%= link_to "<i class='fas fa-user-friends'></i><span>Clientes/Contrarios</span>".html_safe, customers_path ,{class: "nav-link collapsed"}%>
+          <%= link_to "<i class='fas fa-user-friends'></i><span>Clientes & Contrarios</span>".html_safe, customers_path ,{class: "nav-link collapsed"}%>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
@@ -59,6 +59,25 @@
           <i class="fas fa-gavel"></i>
           <span>Juzgados</span>
         </a>
+      </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" >
+          <i class="fas fa-cogs"></i>
+          <span>Catalogos</span>
+        </a>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <%= link_to "<span>Tipo Clientes</span>".html_safe, customer_types_path ,{class: "collapse-item"}%>
+            <%= link_to "<span>Juzgados</span>".html_safe, courts_path ,{class: "collapse-item"}%>
+            <%= link_to "<span>Estados</span>".html_safe, states_path ,{class: "collapse-item"}%>
+            <%= link_to "<span>Distritos</span>".html_safe, districts_path ,{class: "collapse-item"}%>
+            <%= link_to "<span>Tipo Juicio</span>".html_safe, judgments_path ,{class: "collapse-item"}%>
+            <%= link_to "<span>Materia</span>".html_safe, matters_path ,{class: "collapse-item"}%>
+            <%= link_to "<span>Acciones</span>".html_safe, acts_path ,{class: "collapse-item"}%>
+          </div>
+        </div>
       </li>
 
       <!-- Divider -->
