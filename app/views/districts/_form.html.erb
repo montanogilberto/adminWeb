@@ -1,7 +1,7 @@
 <%= form_with(model: district, local: true) do |form| %>
   <% if district.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(district.errors.count, "error") %> prohibited this district from being saved:</h2>
+      <h4><%= pluralize(district.errors.count, "error") %> al guardar</h4>
 
       <ul>
       <% district.errors.full_messages.each do |message| %>
@@ -11,12 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :district_name %>
+  <div class="form-group col-sm-8">
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, id: :district_name, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group col-sm-8">
+      <%= form.label :customer_type, "Estado" %>
+      <%= form.collection_select(:state_id, State.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
+    </div>
+
+  <div class="form-group col-sm-8">
+    <div class="actions">
+      <%= form.submit "Guardar", class: "btn btn-primary"%>
+    </div>
   </div>
+
 <% end %>

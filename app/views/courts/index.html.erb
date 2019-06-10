@@ -1,27 +1,31 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Courts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="form-group col-sm-8">
+  <h4>Juzgados</h4>
+</div>
 
-  <tbody>
-    <% @courts.each do |court| %>
+<div class="table-responsive">
+  <table class="table table-hover table-sm">
+    <thead class="thead-light">
       <tr>
-        <td><%= court.name %></td>
-        <td><%= link_to 'Show', court %></td>
-        <td><%= link_to 'Edit', edit_court_path(court) %></td>
-        <td><%= link_to 'Destroy', court, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">Nombre</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @courts.each do |court| %>
+        <tr scope="row">
+          <td><%= court.name %></td>
+          <td><%= link_to 'Show', court, class: "btn btn-outline-primary btn-sm" %></td>
+          <td><%= link_to 'Edit', edit_court_path(court) , class: "btn btn-outline-primary btn-sm"%></td>
+          <td><%= link_to 'Destroy', court, method: :delete, data: { confirm: 'Estas Seguro?' }, class: "btn btn-outline-danger btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
-
-<%= link_to 'New Court', new_court_path %>
+<div class="form-group col-sm-8">
+  <%= link_to 'Nuevo', new_court_path, class: "btn btn-primary" %>
+</div>

@@ -1,7 +1,7 @@
 <%= form_with(model: court, local: true) do |form| %>
   <% if court.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(court.errors.count, "error") %> prohibited this court from being saved:</h2>
+      <h4><%= pluralize(court.errors.count, "error") %> Al guardar</h4>
 
       <ul>
       <% court.errors.full_messages.each do |message| %>
@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :court_name %>
+  <div class="form-group col-sm-8">
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, id: :court_name, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group col-sm-8">
+    <div class="actions">
+      <%= form.submit "Guardar", class: "form-control" %>
+    </div>
   </div>
 <% end %>

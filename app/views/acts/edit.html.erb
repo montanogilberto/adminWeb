@@ -1,6 +1,10 @@
-<h1>Editing Act</h1>
+<div class="form-group col-sm-8">
+	<h4>Editar Acciones</h4>
+</div>
 
 <%= render 'form', act: @act %>
 
-<%= link_to 'Show', @act %> |
-<%= link_to 'Back', acts_path %>
+<div class="form-group col-sm-8">
+	<%= link_to 'Consultar', @act, class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', acts_path, class: "btn btn-primary" %>
+</div>

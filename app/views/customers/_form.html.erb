@@ -2,7 +2,7 @@
     <%= form_with(model: customer, local: true) do |form| %>
       <% if customer.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(customer.errors.count, "error") %> Error al guardar el registro:</h2>
+          <h4><%= pluralize(customer.errors.count, "error") %> Error al guardar el registro:</h4>
 
           <ul>
           <% customer.errors.full_messages.each do |message| %>
@@ -12,8 +12,6 @@
         </div>
       <% end %>
   
-
-
     <div class="form-group col-sm-8">
       <%= form.label :name, "Nombre" %>
       <%= form.text_field :name, id: :customer_name, class: "form-control" %>

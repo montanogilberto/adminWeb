@@ -1,10 +1,12 @@
 class DistrictsController < ApplicationController
   before_action :set_district, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except:[:show,:index]
 
   # GET /districts
   # GET /districts.json
   def index
     @districts = District.all
+    @states = State.all
   end
 
   # GET /districts/1
@@ -25,6 +27,7 @@ class DistrictsController < ApplicationController
   # POST /districts.json
   def create
     @district = District.new(district_params)
+    @state = @district.state_id
 
     respond_to do |format|
       if @district.save
@@ -69,6 +72,6 @@ class DistrictsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def district_params
-      params.require(:district).permit(:name)
+      params.require(:district).permit(:name,:state_id)
     end
 end

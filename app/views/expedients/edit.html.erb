@@ -1,6 +1,10 @@
-<h1>Editing Expedient</h1>
+<div class="form-group col-sm-8">
+	<h4>Editar Expediente</h4>
+</div>
 
 <%= render 'form', expedient: @expedient %>
 
-<%= link_to 'Show', @expedient %> |
-<%= link_to 'Back', expedients_path %>
+<div class="form-panel col-sm-8">
+	<%= link_to 'Consultar', @expedient, class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', expedients_path, class: "btn btn-primary" %>
+</div>

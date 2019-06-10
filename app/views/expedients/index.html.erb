@@ -1,32 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="form-group col-sm-8">
+  <h4>Expedientes</h4>
+</div>
 
-<h1>Expedients</h1>
-
-<table>
-  <thead>
+<div class="table-responsive">
+<table class="table table-hover table-sm">
+  <thead class="thead-light">
     <tr>
-      <th>Noexpedient</th>
-      <th>Year</th>
-      <th>Active</th>
-      <th>Actor</th>
-      <th>Defendant</th>
-      <th>Customer</th>
-      <th>Fee</th>
-      <th>Payment</th>
-      <th>Saldo</th>
-      <th>Court</th>
-      <th>State</th>
-      <th>District</th>
-      <th>Act</th>
-      <th>Matter</th>
-      <th>Judgment</th>
+      <th scope="col">No Expediente</th>
+      <th scope="col">Año</th>
+      <th scope="col">Activo</th>
+      <th scope="col">Actor</th>
+      <th scope="col">Defendant</th>
+      <th scope="col">Customer</th>
+      <th scope="col">Fee</th>
+      <th scope="col">Payment</th>
+      <th scope="col">Saldo</th>
+      <th scope="col">Court</th>
+      <th scope="col">State</th>
+      <th scope="col">District</th>
+      <th scope="col">Act</th>
+      <th scope="col">Matter</th>
+      <th scope="col">Judgment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @expedients.each do |expedient| %>
-      <tr>
+      <tr scope="row">
         <td><%= expedient.NoExpedient %></td>
         <td><%= expedient.year %></td>
         <td><%= expedient.active %></td>
@@ -42,9 +43,9 @@
         <td><%= expedient.act %></td>
         <td><%= expedient.matter %></td>
         <td><%= expedient.judgment %></td>
-        <td><%= link_to 'Show', expedient %></td>
-        <td><%= link_to 'Edit', edit_expedient_path(expedient) %></td>
-        <td><%= link_to 'Destroy', expedient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Consultar', expedient , class: "btn btn-outline-primary btn-sm"%></td>
+        <td><%= link_to 'Modificar', edit_expedient_path(expedient) , class: "btn btn-outline-primary btn-sm"%></td>
+        <td><%= link_to 'Eliminar', expedient, method: :delete, data: { confirm: 'Estas Seguro?' }, class: "btn btn-outline-primary btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

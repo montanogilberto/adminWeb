@@ -1,6 +1,9 @@
-<h1>Editing Court</h1>
+<div class="form-group col-sm-8">
+	<h4>Editar Juzgado </h4>
+</div>
 
 <%= render 'form', court: @court %>
-
-<%= link_to 'Show', @court %> |
-<%= link_to 'Back', courts_path %>
+<div class="form-group col-sm-8">
+	<%= link_to 'Consultar', @court, class: "form-control" %> |
+	<%= link_to 'Regresar', courts_path, class: "form-control" %>
+</div>

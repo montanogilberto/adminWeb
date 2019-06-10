@@ -1,9 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="form-group col-sm-8">
 
-<p>
-  <strong>Name:</strong>
-  <%= @district.name %>
-</p>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @district.name %>
+	</p>
+	<p>
+	  <strong>estados:</strong>
+	  <%= @district.state.name %>
+	</p>
 
-<%= link_to 'Edit', edit_district_path(@district) %> |
-<%= link_to 'Back', districts_path %>
+	<%= link_to 'Modificar', edit_district_path(@district), class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', districts_path, class: "btn btn-primary" %>
+<div class="form-group col-sm-8">

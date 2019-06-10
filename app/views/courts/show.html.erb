@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="form-group col-sm-8">
+	<p>
+  		<strong>Name:</strong>
+  		<%= @court.name %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @court.name %>
-</p>
-
-<%= link_to 'Edit', edit_court_path(@court) %> |
-<%= link_to 'Back', courts_path %>
+	<%= link_to 'Modificar', edit_court_path(@court), class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', courts_path, class: "btn btn-primary" %>
+</div>

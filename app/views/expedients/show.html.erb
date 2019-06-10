@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<div class="form-group col-sm-8">
+  
+
 
 <p>
   <strong>Noexpedient:</strong>
@@ -75,5 +77,6 @@
   <%= @expedient.judgment %>
 </p>
 
-<%= link_to 'Edit', edit_expedient_path(@expedient) %> |
-<%= link_to 'Back', expedients_path %>
+<%= link_to 'Modificar', edit_expedient_path(@expedient), class: "btn btn-primary" %> |
+<%= link_to 'Regresar', expedients_path, class: "btn btn-primary" %>
+</div>
