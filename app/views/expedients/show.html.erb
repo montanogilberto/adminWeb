@@ -1,19 +1,17 @@
 <div class="form-group col-sm-8">
   
-
-
 <p>
-  <strong>Noexpedient:</strong>
+  <strong>No Expediente:</strong>
   <%= @expedient.NoExpedient %>
 </p>
 
 <p>
-  <strong>Year:</strong>
+  <strong>Año</strong>
   <%= @expedient.year %>
 </p>
 
 <p>
-  <strong>Active:</strong>
+  <strong>Activo</strong>
   <%= @expedient.active %>
 </p>
 
@@ -23,12 +21,12 @@
 </p>
 
 <p>
-  <strong>Defendant:</strong>
+  <strong>Demandado:</strong>
   <%= @expedient.defendant %>
 </p>
 
 <p>
-  <strong>Customer:</strong>
+  <strong>Cliente:</strong>
   <%= @expedient.customer %>
 </p>
 
@@ -48,33 +46,33 @@
 </p>
 
 <p>
-  <strong>Court:</strong>
-  <%= @expedient.court %>
+  <strong>Juzgado:</strong>
+  <%= @expedient.court.name %>
 </p>
 
 <p>
-  <strong>State:</strong>
-  <%= @expedient.state %>
+  <strong>Estado:</strong>
+  <%= @expedient.state.name %>
 </p>
 
 <p>
-  <strong>District:</strong>
-  <%= @expedient.district %>
+  <strong>Distrito:</strong>
+  <%= @expedient.district.name %>
 </p>
 
 <p>
-  <strong>Act:</strong>
-  <%= @expedient.act %>
+  <strong>Acccion:</strong>
+  <%= @expedient.act.name %>
 </p>
 
 <p>
-  <strong>Matter:</strong>
-  <%= @expedient.matter %>
+  <strong>Materia:</strong>
+  <%= @expedient.matter.name %>
 </p>
 
 <p>
-  <strong>Judgment:</strong>
-  <%= @expedient.judgment %>
+  <strong>Tipo Juicio:</strong>
+  <%= @expedient.judgment.name %>
 </p>
 
 <%= link_to 'Modificar', edit_expedient_path(@expedient), class: "btn btn-primary" %> |

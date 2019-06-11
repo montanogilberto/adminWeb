@@ -1,6 +1,10 @@
-<h1>Editing State</h1>
+<div class="form-panel col-sm-8">
+	<h4>Editar Estados</h4>
+</div>
 
 <%= render 'form', state: @state %>
 
-<%= link_to 'Show', @state %> |
-<%= link_to 'Back', states_path %>
+<div class="form-panel col-sm-8">
+	<%= link_to 'Consultar', @state, class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', states_path, class: "btn btn-primary" %>
+</div>

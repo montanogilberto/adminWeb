@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="form-panel col-sm-8">
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @state.name %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @state.name %>
-</p>
-
-<%= link_to 'Edit', edit_state_path(@state) %> |
-<%= link_to 'Back', states_path %>
+	<%= link_to 'Modificar', edit_state_path(@state), class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', states_path, class: "btn btn-primary" %>
+</div>

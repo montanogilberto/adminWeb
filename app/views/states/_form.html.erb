@@ -1,7 +1,7 @@
 <%= form_with(model: state, local: true) do |form| %>
   <% if state.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(state.errors.count, "error") %> prohibited this state from being saved:</h2>
+      <h4><%= pluralize(state.errors.count, "error") %> al Guardar</h4>
 
       <ul>
       <% state.errors.full_messages.each do |message| %>
@@ -10,13 +10,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :state_name %>
+  <div class="form-panel col-sm-8">
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, id: :state_name, class: "form-control" %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <br>
+  <div class="form-panel col-sm-8">
+    <div class="actions">
+      <%= form.submit "Guardar", class: "btn btn-primary" %>
+    </div>
   </div>
+<br>
 <% end %>

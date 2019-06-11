@@ -1,7 +1,7 @@
 <%= form_with(model: matter, local: true) do |form| %>
   <% if matter.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(matter.errors.count, "error") %> prohibited this matter from being saved:</h2>
+      <h4><%= pluralize(matter.errors.count, "error") %> al Guardar</h4>
 
       <ul>
       <% matter.errors.full_messages.each do |message| %>
@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :matter_name %>
+  <div class="form-panel col-sm-8">
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, id: :matter_name, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-panel col-sm-8">
+    <div class="actions">
+      <%= form.submit "Guardar", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

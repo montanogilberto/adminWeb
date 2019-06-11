@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="form-panel col-sm-8">
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @matter.name %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @matter.name %>
-</p>
-
-<%= link_to 'Edit', edit_matter_path(@matter) %> |
-<%= link_to 'Back', matters_path %>
+	<%= link_to 'Modificar', edit_matter_path(@matter), class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', matters_path, class: "btn btn-primary" %>
+</div>

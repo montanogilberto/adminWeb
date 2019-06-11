@@ -1,9 +1,13 @@
-<div class="form-group col-sm-8">
-	<h4>Nuevo Expediente</h4>
+<div class="form-row">
+	<div class="form-group col-md-4 mb-3">
+		<h4>Nuevo Expediente</h4>
+	</div>
 </div>
 
 <%= render 'form', expedient: @expedient %>
 
-<div class="form-group col-sm-8">
-	<%= link_to 'Regresar', expedients_path, class: "btn btn-primary" %>
+<div class="form-row">
+	<div class="form-panel col-md-4 mb-3">
+		<%= link_to 'Regresar', expedients_path, class: "btn btn-primary" %>
+	</div>
 </div>

@@ -1,27 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Matters</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @matters.each do |matter| %>
+<div class="form-panel col-sm-8">
+  <h4>Materia</h4>
+</div>
+<div class="table-responsive">
+  <table class="table table-hover table-sm">
+    <thead class="thead-light">
       <tr>
-        <td><%= matter.name %></td>
-        <td><%= link_to 'Show', matter %></td>
-        <td><%= link_to 'Edit', edit_matter_path(matter) %></td>
-        <td><%= link_to 'Destroy', matter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">Nombre</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @matters.each do |matter| %>
+        <tr>
+          <td><%= matter.name %></td>
+          <td><%= link_to 'Show', matter, class: "btn btn-outline-primary btn-sm" %></td>
+          <td><%= link_to 'Edit', edit_matter_path(matter), class: "btn btn-outline-primary btn-sm" %></td>
+          <td><%= link_to 'Destroy', matter, method: :delete, data: { confirm: 'Estas Seguro?' }, class: "btn btn-outline-danger btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'New Matter', new_matter_path %>
+<div class="form-panel col-sm-8">
+  <%= link_to 'Nuevo', new_matter_path, class: "btn btn-primary" %>
+</div>

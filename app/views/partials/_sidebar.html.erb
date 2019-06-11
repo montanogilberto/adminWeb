@@ -25,11 +25,6 @@
         Menu
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-          <%= link_to "<i class='fas fa-user-friends'></i><span>Clientes & Contrarios</span>".html_safe, customers_path ,{class: "nav-link collapsed"}%>
-      </li>
-
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" >
@@ -38,7 +33,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item">Estatales</a>
+            <%= link_to "<span>Estatales</span>".html_safe, expedients_path ,{class: "collapse-item"}%>
             <a class="collapse-item" >Federales</a>
             <a class="collapse-item" >Extrajudiciales</a>
           </div>
@@ -53,15 +48,13 @@
         </a>
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
+      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-gavel"></i>
-          <span>Juzgados</span>
-        </a>
+          <%= link_to "<i class='fas fa-user-friends'></i><span>Clientes & Contrarios</span>".html_safe, customers_path ,{class: "nav-link collapsed"}%>
       </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+
+      <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" >
           <i class="fas fa-cogs"></i>
@@ -78,6 +71,12 @@
             <%= link_to "<span>Acciones</span>".html_safe, acts_path ,{class: "collapse-item"}%>
           </div>
         </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-chart-pie"></i>
+          <span>Reportes</span></a>
       </li>
 
       <!-- Divider -->
@@ -108,12 +107,6 @@
         <a class="nav-link" href="#">
           <i class="fas fa-journal-whills"></i>
           <span>Consultar Leyes</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-chart-pie"></i>
-          <span>Reportes</span></a>
       </li>
 
       <li class="nav-item">

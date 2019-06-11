@@ -1,6 +1,10 @@
-<h1>Editing Matter</h1>
+<div class="form-panel col-sm-8">
+	<h4>Editar Materia</h4>
+</div>
 
 <%= render 'form', matter: @matter %>
 
-<%= link_to 'Show', @matter %> |
-<%= link_to 'Back', matters_path %>
+<div class="form-panel col-sm-8">
+	<%= link_to 'Consultar', @matter, class: "btn btn-primary" %> |
+	<%= link_to 'Regresar', matters_path, class: "btn btn-primary" %>
+</div>
