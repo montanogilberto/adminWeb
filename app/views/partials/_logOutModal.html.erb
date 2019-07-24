@@ -3,17 +3,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Listo Para Irse?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Seleccione Cerrar Session si quiere cerrar la actual session </div>
+        <div class="modal-body">Seleccione Cerrar Sesion si quiere cerrar la sesion actual</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary">
-            <%= link_to "Cerrar Sessión", destroy_user_session_path, method: :delete %>
-          </a>
+          <%= link_to "<span>Cerrar Sesión</span>".html_safe, new_user_session_path ,{class: "btn btn-primary"}%>
         </div>
       </div>
     </div>

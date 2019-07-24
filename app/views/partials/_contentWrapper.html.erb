@@ -188,12 +188,9 @@
                 </div>
               </li>
             <%else%>
-              <li >
-                <a class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">
+              <li class="nav-item dropdown no-arrow">
 
-                    <%= link_to "Iniciar Sessión", new_user_session_path, {:class => "mr-2 d-none d-lg-inline text-gray-600 small"}%>
-                  
-                    <%= link_to "Crear Cuenta", new_user_registration_path, {:class => "mr-2 d-none d-lg-inline text-gray-600 small"}%>
+                <%= link_to "<span>Iniciar Sesión</span>".html_safe, new_user_session_path ,{class: "mr-2 d-none d-lg-inline text-gray-600 small"}%>
                 </a>
               </li>
             <% end -%>
