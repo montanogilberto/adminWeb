@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  
+  <div class="form-row">
+    <div class="form-row align-items-right">
+      <%= form.submit "Guardar", class: "btn btn-primary" %> <span style="color: white;"> | </span>
+    </div>
+    <div class="col-md-4">
+      <%= link_to 'Regresar', expedients_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
   <div class="form-row">
     <div class="form-panel col-md-4 mb-3">
       <%= form.label :NoExpedient, "No Expediente" %>
@@ -90,13 +100,6 @@
     <div class="form-group col-md-4 mb-3">
         <%= form.label :judgment, "Juicio" %>
         <%= form.collection_select(:judgment_id, Judgment.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-4 mb-3">
-      <div class="actions">
-        <%= form.submit "Guardar", class: "btn btn-primary" %>
-      </div>
     </div>
   </div>
 <% end %>

@@ -1,9 +1,13 @@
-<div class="form-group col-sm-8">
+<div class="form-group">
   <h4>Expedientes</h4>
 </div>
 
+<div class="form-group">
+  <%= link_to 'Nuevo', new_expedient_path, class: "btn btn-primary" %>
+</div>
+
 <div class="table-responsive">
-  <table class="table table-hover table-sm">
+  <table class="table table-condensed table-striped table-hover">
     <thead class="thead-light">
       <tr>
         <th scope="col">No Expediente</th>
@@ -12,10 +16,9 @@
         <th scope="col">Actor</th>
         <th scope="col">Demandado</th>
         <th scope="col">Cliente</th>
-        <th scope="col">Fee</th>
-        <th scope="col">Payment</th>
+        <th scope="col">Honorarios</th>
+        <th scope="col">Pagos</th>
         <th scope="col">Saldo</th>
-        <th scope="col">Court</th>
         <th scope="col">Estado</th>
         <th scope="col">Distrito</th>
         <th scope="col">Accion</th>
@@ -29,7 +32,7 @@
       <% @expedients.each do |expedient| %>
         <tr scope="row">
           <td><%= expedient.NoExpedient %></td>
-          <td><%= expedient.year %></td>
+          <td><%= expedient.year.strftime("%Y") %></td>
           <td><%= expedient.active %></td>
           <td><%= expedient.actor %></td>
           <td><%= expedient.defendant %></td>
@@ -37,7 +40,6 @@
           <td><%= expedient.fee %></td>
           <td><%= expedient.payment %></td>
           <td><%= expedient.saldo %></td>
-          <td><%= expedient.court.name %></td>
           <td><%= expedient.state.name %></td>
           <td><%= expedient.district.name %></td>
           <td><%= expedient.act.name %></td>
@@ -50,7 +52,8 @@
       <% end %>
     </tbody>
   </table>
+  <%= link_to "link", :remote => true, :id => "my_link" %>
 </div>
 <br>
 
-<%= link_to 'Nuevo', new_expedient_path, class: "btn btn-primary" %>
+

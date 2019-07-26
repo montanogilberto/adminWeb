@@ -188,10 +188,8 @@
                 </div>
               </li>
             <%else%>
-              <li class="nav-item dropdown no-arrow">
-
-                <%= link_to "<span>Iniciar Sesión</span>".html_safe, new_user_session_path ,{class: "mr-2 d-none d-lg-inline text-gray-600 small"}%>
-                </a>
+              <li class="nav-item">
+                <%= link_to "<span>Iniciar Sesión</span>".html_safe, new_user_session_path ,{class: "nav-link"}%>
               </li>
             <% end -%>
           </ul>

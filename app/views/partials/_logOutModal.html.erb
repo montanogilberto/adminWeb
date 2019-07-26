@@ -11,7 +11,7 @@
         <div class="modal-body">Seleccione Cerrar Sesion si quiere cerrar la sesion actual</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <%= link_to "<span>Cerrar Sesión</span>".html_safe, new_user_session_path ,{class: "btn btn-primary"}%>
+          <%= link_to "<span class='btn btn-primary'>Cerrar Sesión</span>".html_safe, destroy_user_session_path, method: :delete %>
         </div>
       </div>
     </div>
