@@ -27,8 +27,13 @@
   <script type="text/javascript">
     $(document).ready(function(){
 
+      let width = $(window).width();
+      if (width <= 720){
+          $("body").toggleClass("sidebar-toggled");
+          $(".sidebar").toggleClass("toggled");
+        }
+
       $("#sidebarToggleTop").on('click',function(e) {
-      //alert('entro');
       e.preventDefault();
       $("body").toggleClass("sidebar-toggled");
       $(".sidebar").toggleClass("toggled");
