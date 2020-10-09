@@ -28,7 +28,7 @@ class ExpedientsController < ApplicationController
 
     respond_to do |format|
       if @expedient.save
-        format.html { redirect_to @expedient, notice: 'Expedient was successfully created.' }
+        format.html { redirect_to @expedient, notice: 'Expediente Creado Exitosamente.' }
         format.json { render :show, status: :created, location: @expedient }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ExpedientsController < ApplicationController
   def update
     respond_to do |format|
       if @expedient.update(expedient_params)
-        format.html { redirect_to @expedient, notice: 'Expedient was successfully updated.' }
+        format.html { redirect_to @expedient, notice: 'Expediente Actualizado Exitosamente.' }
         format.json { render :show, status: :ok, location: @expedient }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ExpedientsController < ApplicationController
   def destroy
     @expedient.destroy
     respond_to do |format|
-      format.html { redirect_to expedients_url, notice: 'Expedient was successfully destroyed.' }
+      format.html { redirect_to expedients_url, notice: 'Expediente Eliminado Exitosamente.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class ExpedientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expedient_params
-      params.require(:expedient).permit(:NoExpedient, :year, :active, :actor, :defendant, :customer, :fee, :payment, :saldo, :court_id, :state_id, :district_id, :act_id, :matter_id, :judgment_id)
+      params.require(:expedient).permit(:NoExpedient, :year, :active, :actor, :defendant, :fee, :payment, :saldo, :court_id, :state_id, :district_id, :act_id, :matter_id, :judgment_id, :customer_id)
     end
 end

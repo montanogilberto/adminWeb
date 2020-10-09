@@ -5,4 +5,5 @@ class Expedient < ApplicationRecord
   belongs_to :act
   belongs_to :matter
   belongs_to :judgment
+  belongs_to :customer
 end

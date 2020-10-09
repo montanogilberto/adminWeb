@@ -1,51 +1,91 @@
 
-    <%= form_with(model: customer, local: true) do |form| %>
-      <% if customer.errors.any? %>
-        <div id="error_explanation">
-          <h4><%= pluralize(customer.errors.count, "error") %> Error al guardar el registro:</h4>
+<%= form_with(model: customer, local: true) do |form| %>
+    <% if customer.errors.any? %>
+      <div id="error_explanation">
+        <h4><%= pluralize(customer.errors.count, "error") %> Error al guardar el registro:</h4>
 
-          <ul>
-          <% customer.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
+        <ul>
+        <% customer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
   
-    <div class="form-group col-sm-8">
+  
+  <div class="form-row">
+    <div class="form-panel col-md-4 mb-3">
       <%= form.label :name, "Nombre" %>
-      <%= form.text_field :name, id: :customer_name, class: "form-control" %>
+      <%= form.text_field :name, 
+          id: :customer_name, 
+          class: "form-control",
+          placeholder: "ejemplo. Francisco", 
+          required: true
+      %>
     </div>
-
-    <div class="form-group col-sm-8">
-      <%= form.label :adress, "Domicilio Particular" %>
-      <%= form.text_field :adress, id: :customer_adress, class: "form-control" %>
+    <div class="form-panel col-md-4 mb-3">
+      <%= form.label :name2, "Segundo Nombre" %>
+      <%= form.text_field :name2, 
+          id: :customer_name2, 
+          class: "form-control",
+          placeholder: "ejemplo. Jose" 
+      %>
     </div>
+  </div>
 
-    <div class="form-group col-sm-8">
-      <%= form.label :adress2, "Domicilio Notificador" %>
-      <%= form.text_field :adress2, id: :customer_adress2, class: "form-control" %>
+  <div class="form-row">
+    <div class="form-panel col-md-4 mb-3">
+      <%= form.label :lastname, "Apellido" %>
+      <%= form.text_field :lastname, 
+          id: :customer_lastname, 
+          class: "form-control",
+          placeholder: "ejemplo. Montano", 
+          required: true
+      %>
     </div>
+    <div class="form-panel col-md-4 mb-3">
+      <%= form.label :lastname2, "Segundo Apellido" %>
+      <%= form.text_field :lastname2, 
+          id: :customer_lastname2, 
+          class: "form-control",
+          placeholder: "ejemplo. Osuna" 
+      %>
+    </div>
+  </div>
 
-    <div class="form-group col-sm-8">
+  <div class="form-row">
+    <div class="form-panel col-md-4 mb-3">
       <%= form.label :email, "Correo Electronico" %>
-      <%= form.text_field :email, id: :customer_email, class: "form-control" %>
+      <%= form.text_field :email, 
+      id: :customer_email, 
+      class: "form-control", 
+      required: true,
+      placeholder: "ejemplo. cliente@correo.com" %>
     </div>
 
-    <div class="form-group col-sm-8">
-      <%= form.label :celular %>
-      <%= form.text_field :celular, id: :customer_celular, class: "form-control" %>
+    <div class="form-panel col-md-4 mb-3">
+      <%= form.label :cellular, "Celular" %>
+      <%= form.text_field :cellular, 
+      id: :customer_cellular, 
+      class: "form-control", 
+      required: true,
+      placeholder: "ejemplo. 6624057073" %>
     </div>
+  </div>
 
+  <div class="form-row">
     <div class="form-group col-sm-8">
       <%= form.label :customer_type, "Tipo Cliente" %>
-      <%= form.collection_select(:customer_type_id, CustomerType.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
+      <%= form.collection_select(:customer_type_id, CustomerType.all, :id, :name,{ include_blank: true }, { class: "form-control" }) %>
     </div>
-
+  </div>
+  
+  <div class="form-row">
     <div class="form-group col-sm-8">
       <div class="actions">
         <%= form.submit "Guardar", class: "btn btn-primary" %>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
 

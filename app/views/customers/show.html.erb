@@ -1,17 +1,22 @@
 <div class="form-group col-sm-8">
   <p>
     <strong>Nombre:</strong>
-    <%= @customer.name %>
+    <%= @customer.name.to_s + ' ' + @customer.name2.to_s %>
+  </p>
+
+  <p>
+    <strong>Apellidos:</strong>
+    <%= @customer.lastname.to_s + ' ' + @customer.lastname2.to_s %>
   </p>
 
   <p>
     <strong>Domicilio Particular:</strong>
-    <%= @customer.adress %>
+    <%=  %>
   </p>
 
   <p>
     <strong>Domicilio Notificación:</strong>
-    <%= @customer.adress2 %>
+    <%=  %>
   </p>
 
   <p>
@@ -21,11 +26,11 @@
 
   <p>
     <strong>Celular:</strong>
-    <%= @customer.celular %>
+    <%= @customer.cellular %>
   </p>
 
   <p>
-    <strong>Tipo Cliente:</strong>
+    <strong>Tipo:</strong>
     <%= @customer.customer_type.name %>
   </p>
 

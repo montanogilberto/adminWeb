@@ -28,7 +28,7 @@ class CustomerTypesController < ApplicationController
 
     respond_to do |format|
       if @customer_type.save
-        format.html { redirect_to @customer_type, notice: 'Customer type was successfully created.' }
+        format.html { redirect_to @customer_type, notice: 'Cliente Creado Exitosamente.' }
         format.json { render :show, status: :created, location: @customer_type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CustomerTypesController < ApplicationController
   def update
     respond_to do |format|
       if @customer_type.update(customer_type_params)
-        format.html { redirect_to @customer_type, notice: 'Customer type was successfully updated.' }
+        format.html { redirect_to @customer_type, notice: 'Cliente Update Exitosamente.' }
         format.json { render :show, status: :ok, location: @customer_type }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CustomerTypesController < ApplicationController
   def destroy
     @customer_type.destroy
     respond_to do |format|
-      format.html { redirect_to customer_types_url, notice: 'Customer type was successfully destroyed.' }
+      format.html { redirect_to customer_types_url, notice: 'Cliente Eliminado Exitosamente.' }
       format.json { head :no_content }
     end
   end

@@ -1,41 +1,40 @@
-<div class="form-group col-sm-8">
+<div class="form-group">
   <h4>Clientes/Contrarios</h4>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-condensed table-striped table-hover">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">Cliente/Contrario</th>
-        <th scope="col">Domicilio Particular</th>
-        <th scope="col">Domicilio Notificaciones</th>
-        <th scope="col">Correo Electronico</th>
-        <th scope="col">Celular</th>
-        <th scope="col">Usuario</th>
-        <th scope="col">Tipo Cliente</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @customers.each do |customer| %>
-        <tr scope="row">
-          <td><%= customer.name %></td>
-          <td><%= customer.adress %></td>
-          <td><%= customer.adress2 %></td>
-          <td><%= customer.email %></td>
-          <td><%= customer.celular %></td>
-          <td><%= customer.user.email %></td>
-          <td><%= customer.customer_type.name %></td>
-          <td><%= link_to 'Consultar', customer , class: "btn btn-outline-primary btn-sm"%></td>
-          <td><%= link_to 'Modificar', edit_customer_path(customer) , class: "btn btn-outline-primary btn-sm"%></td>
-          <td><%= link_to 'Eliminar', customer, method: :delete, data: { confirm: 'Estas Seguro?' } , class: "btn btn-outline-danger btn-sm"%></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<br>
-<div class="form-group col-sm-8">
+<div class="form-group">
   <%= link_to 'Nuevo', new_customer_path, class: "btn btn-primary" %>
+</div>
+
+
+<div class="form-group">
+  <div class="table-responsive">
+    <table class="table table-striped table-sm table-responsive-sm">
+
+      <tbody>
+        <% @customers.each do |customer| %>
+          <tr scope="row" data-link="<%= customer_path(customer) %>">
+            <td>
+          <ion-list >
+            <ion-list-header>
+              Nombre: 
+              <%= customer.name.to_s + ' ' + customer.name2.to_s + ' ' + customer.lastname.to_s + ' ' + customer.lastname2.to_s %>
+            </ion-list-header>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+              </ion-avatar>
+              <ion-label>
+                <h3>Tipo: <%= customer.customer_type.name %></h3>
+                <p>Email: <%= customer.email %></p>
+                <p>Celular: <%= customer.cellular %></p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

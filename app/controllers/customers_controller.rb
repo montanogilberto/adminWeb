@@ -6,7 +6,6 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     @customers = Customer.all
-    @customer_types = CustomerType.all
   end
 
   # GET /customers/1
@@ -27,7 +26,6 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = current_user.customers.new(customer_params)
-    @customer_type = @customer.customer_type_id
     respond_to do |format|
       if @customer.save
         format.html { redirect_to @customer, notice: 'El registro fue creado correctamente' }
@@ -75,6 +73,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:name, :adress, :adress2, :email, :celular, :customer_type_id)
-    end
+      params.require(:customer).permit(:name, :name2, :lastname, :lastname2, :email, :cellular, :customer_type_id, :user_id)
+    end 
 end
