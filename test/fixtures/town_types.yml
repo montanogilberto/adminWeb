@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  estado: MyString
-  circuito: MyString
+  tipoAsentamiento: MyString
+  codigo: MyString
 
 two:
-  estado: MyString
-  circuito: MyString
+  tipoAsentamiento: MyString
+  codigo: MyString

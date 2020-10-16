@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asentamiento: MyString
+  township: one
+  state: one
+
+two:
+  asentamiento: MyString
+  township: two
+  state: two

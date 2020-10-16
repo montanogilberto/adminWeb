@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calle: MyString
+  entre: MyString
+  entre2: MyString
+  noExterior: MyString
+  noInterior: MyString
+  referencia: MyText
+
+two:
+  calle: MyString
+  entre: MyString
+  entre2: MyString
+  noExterior: MyString
+  noInterior: MyString
+  referencia: MyText

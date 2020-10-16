@@ -1,0 +1,1 @@
+json.partial! "customer_blogs/customer_blog", customer_blog: @customer_blog
