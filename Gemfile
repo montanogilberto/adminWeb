@@ -37,7 +37,7 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.8.1'
 gem 'jquery-datatables'
 gem 'chart-js-rails'
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 gem "tabs_on_rails"
 
 group :development, :test do
