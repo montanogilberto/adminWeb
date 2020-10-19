@@ -15,23 +15,23 @@
         <% @customers.each do |customer| %>
           <tr scope="row" data-link="<%= customer_path(customer) %>">
             <td>
-          <ion-list >
-            <ion-list-header>
-              Nombre: 
-              <%= customer.name.to_s + ' ' + customer.name2.to_s + ' ' + customer.lastname.to_s + ' ' + customer.lastname2.to_s %>
-            </ion-list-header>
-            <ion-item>
-              <ion-avatar slot="start">
-                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-              </ion-avatar>
-              <ion-label>
-                <h3>Tipo: <%= customer.customer_type.name %></h3>
-                <p>Email: <%= customer.email %></p>
-                <p>Celular: <%= customer.cellular %></p>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-</td>
+              <ion-list >
+                <ion-list-header>
+                  Nombre: 
+                  <%= customer.name.to_s + ' ' + customer.name2.to_s + ' ' + customer.lastname.to_s + ' ' + customer.lastname2.to_s %>
+                </ion-list-header>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                  </ion-avatar>
+                  <ion-label>
+                    <h3>Tipo: <%= customer.customer_type.name %></h3>
+                    <p>Email: <%= customer.email %></p>
+                    <p>Celular: <%= customer.cellular %></p>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </td>
           </tr>
         <% end %>
       </tbody>

@@ -62,13 +62,13 @@
           </thead>
         <tbody>
           <tr>
-          <% @customer_blogs.each do |customer_blog| %>
+          <% @customer.customer_blogs.each do |customer_blog| %>
             <td><%= customer_blog.field %></td>
-            <td><%= customer_blog.Action %></td>
-            <td><%= customer_blog.New %></td>
-            <td><%= customer_blog.Older %></td>
+            <td><%= customer_blog.action %></td>
+            <td><%= customer_blog.new %></td>
+            <td><%= customer_blog.older %></td>
             <td><%= customer_blog.created_at %></td>
-            <td><%= customer_blog.user.name %></td>
+            <td><%= customer_blog.user.email %></td>
           <%end%>
           </tr>
         <tbody>

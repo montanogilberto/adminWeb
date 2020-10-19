@@ -1,0 +1,10 @@
+<p>hi, from my view</p>
+
+<% @customer_blogs.each do |cb|%>
+    <p><%= cb.action%><p>
+    <p><%= cb.new%><p>
+    <p><%= cb.older%><p>
+    <p><%= cb.customer.name%><p>
+    <p><%= cb.field%><p>
+    <p><%= cb.user.email%><p>
+<%end%> 

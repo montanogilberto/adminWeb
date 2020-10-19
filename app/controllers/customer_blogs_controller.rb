@@ -1,7 +1,9 @@
 class CustomerBlogsController < ApplicationController
-    before_action :set_customer_blog, only: [:show,:index]
-    before_action :authenticate_user!, except:[:show,:index]
+    before_action :set_customer_blog, only: [:show]
+    before_action :authenticate_user!, except:[:show]
 
+    # GET /customer_blogs
+    # GET /customer_blogs.json
     def index
          @customer_blogs = CustomerBlog.all #find_by_key(params[:customer_id])
     end
@@ -13,6 +15,10 @@ class CustomerBlogsController < ApplicationController
 
     def validate_user
         redirect_to new_user_session_path, notice: "Se requiere iniciar sesión"
+    end
+
+    def set_customer
+        @customer = Customer.find(params[:customer_id])
     end
 
     def set_customer_blog
