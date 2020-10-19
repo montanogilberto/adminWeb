@@ -61,16 +61,16 @@
             </tr>
           </thead>
         <tbody>
-          <tr>
-          <% @customer.customer_blogs.each do |customer_blog| %>
+        <% @customer.customer_blogs.each do |customer_blog| %>
+          <tr scope="row">
             <td><%= customer_blog.field %></td>
             <td><%= customer_blog.action %></td>
             <td><%= customer_blog.new %></td>
             <td><%= customer_blog.older %></td>
             <td><%= customer_blog.created_at %></td>
             <td><%= customer_blog.user.email %></td>
-          <%end%>
           </tr>
+        <%end%>
         <tbody>
       </table>
     </div>
