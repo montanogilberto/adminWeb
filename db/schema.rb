@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201016183311) do
+ActiveRecord::Schema.define(version: 20201022000904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,6 +151,14 @@ ActiveRecord::Schema.define(version: 20201016183311) do
     t.string "circuito", limit: 50, comment: "TRIAL"
     t.string "clavecarpeta", limit: 50, comment: "TRIAL"
     t.string "trial589", limit: 1, comment: "TRIAL"
+  end
+
+  create_table "codigo_postals", force: :cascade do |t|
+    t.bigint "town_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "codigoPostal"
+    t.index ["town_id"], name: "index_codigo_postals_on_town_id"
   end
 
   create_table "codigopostales", primary_key: "codigopostalid", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
@@ -474,6 +482,7 @@ ActiveRecord::Schema.define(version: 20201016183311) do
     t.string "circuito"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "codigo"
   end
 
   create_table "sysdiagrams", primary_key: "diagram_id", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
@@ -528,10 +537,10 @@ ActiveRecord::Schema.define(version: 20201016183311) do
   create_table "towns", force: :cascade do |t|
     t.string "asentamiento"
     t.bigint "township_id"
-    t.bigint "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["state_id"], name: "index_towns_on_state_id"
+    t.bigint "town_type_id"
+    t.index ["town_type_id"], name: "index_towns_on_town_type_id"
     t.index ["township_id"], name: "index_towns_on_township_id"
   end
 
@@ -580,6 +589,7 @@ ActiveRecord::Schema.define(version: 20201016183311) do
   add_foreign_key "actuacionesextrajudiciales", "expedientesextrajudiciales", column: "expediente", primary_key: "expediente", name: "fk_actuacionesextrajudiciales_expedientesextrajudiciales"
   add_foreign_key "actuacionesfederales", "expedientesfederales", column: "expediente", primary_key: "expediente", name: "fk_actuacionesfederales_expedientesfederales"
   add_foreign_key "asentamientos", "tipoasentamientos", column: "tipoasentamientoid", primary_key: "tipoasentamientoid", name: "fk_asentamientos_tipoasentamientos"
+  add_foreign_key "codigo_postals", "towns"
   add_foreign_key "codigopostales", "asentamientos", column: "asentamientoid", primary_key: "asentamientoid", name: "fk_codigopostal_asentamiento"
   add_foreign_key "customer_blogs", "users"
   add_foreign_key "customer_details", "address_types", name: "FK_customer_details_address_type"
@@ -622,7 +632,5 @@ ActiveRecord::Schema.define(version: 20201016183311) do
   add_foreign_key "parametros", "usuarios", column: "idusuario", primary_key: "idusuario", name: "fk_parametros_usuarios"
   add_foreign_key "postal_codes", "towns"
   add_foreign_key "tiposdeexpedientes", "tiposdeorganismos", column: "idtipoorganismo", primary_key: "idtipoorganismo", name: "fk_tiposdeexpedientes_tiposdeorganismos"
-  add_foreign_key "towns", "states"
   add_foreign_key "towns", "townships"
-  add_foreign_key "townships", "states"
 end

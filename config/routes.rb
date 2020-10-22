@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :codigo_postals
+  resources :towns
+  resources :townships
+  resources :town_types
   resources :expedients
   resources :acts
   resources :matters

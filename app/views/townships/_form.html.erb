@@ -1,0 +1,32 @@
+<%= form_with(model: township, local: true) do |form| %>
+  <% if township.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(township.errors.count, "error") %> prohibited this township from being saved:</h2>
+
+      <ul>
+      <% township.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :municipio %>
+    <%= form.text_field :municipio, id: :township_municipio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo, id: :township_codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.text_field :state_id, id: :township_state_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

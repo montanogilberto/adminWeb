@@ -1,0 +1,27 @@
+<%= form_with(model: codigo_postal, local: true) do |form| %>
+  <% if codigo_postal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(codigo_postal.errors.count, "error") %> prohibited this codigo_postal from being saved:</h2>
+
+      <ul>
+      <% codigo_postal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :codigoPostal %>
+    <%= form.text_field :codigoPostal, id: :codigo_postal_codigoPostal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :town_id %>
+    <%= form.text_field :town_id, id: :codigo_postal_town_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

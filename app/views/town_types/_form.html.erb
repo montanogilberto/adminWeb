@@ -1,0 +1,27 @@
+<%= form_with(model: town_type, local: true) do |form| %>
+  <% if town_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(town_type.errors.count, "error") %> prohibited this town_type from being saved:</h2>
+
+      <ul>
+      <% town_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tipoAsentamiento %>
+    <%= form.text_field :tipoAsentamiento, id: :town_type_tipoAsentamiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo, id: :town_type_codigo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

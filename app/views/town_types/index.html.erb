@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Town Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipoasentamiento</th>
+      <th>Codigo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @town_types.each do |town_type| %>
+      <tr>
+        <td><%= town_type.tipoAsentamiento %></td>
+        <td><%= town_type.codigo %></td>
+        <td><%= link_to 'Show', town_type %></td>
+        <td><%= link_to 'Edit', edit_town_type_path(town_type) %></td>
+        <td><%= link_to 'Destroy', town_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Town Type', new_town_type_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: town, local: true) do |form| %>
+  <% if town.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(town.errors.count, "error") %> prohibited this town from being saved:</h2>
+
+      <ul>
+      <% town.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :asentamiento %>
+    <%= form.text_field :asentamiento, id: :town_asentamiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :township_id %>
+    <%= form.text_field :township_id, id: :town_township_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.text_field :state_id, id: :town_state_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
