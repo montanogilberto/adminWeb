@@ -7,6 +7,11 @@ one:
   noExterior: MyString
   noInterior: MyString
   referencia: MyText
+  state: one
+  town: one
+  towntype: one
+  township: one
+  codigo_postal: one
 
 two:
   calle: MyString
@@ -15,3 +20,8 @@ two:
   noExterior: MyString
   noInterior: MyString
   referencia: MyText
+  state: two
+  town: two
+  towntype: two
+  township: two
+  codigo_postal: two

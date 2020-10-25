@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Calle</th>
+      <th>Entre</th>
+      <th>Entre2</th>
+      <th>Noexterior</th>
+      <th>Nointerior</th>
+      <th>Referencia</th>
+      <th>State</th>
+      <th>Town</th>
+      <th>Towntype</th>
+      <th>Township</th>
+      <th>Codigo postal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addresses.each do |address| %>
+      <tr>
+        <td><%= address.calle %></td>
+        <td><%= address.entre %></td>
+        <td><%= address.entre2 %></td>
+        <td><%= address.noExterior %></td>
+        <td><%= address.noInterior %></td>
+        <td><%= address.referencia %></td>
+        <td><%= address.state %></td>
+        <td><%= address.town %></td>
+        <td><%= address.towntype %></td>
+        <td><%= address.township %></td>
+        <td><%= address.codigo_postal %></td>
+        <td><%= link_to 'Show', address %></td>
+        <td><%= link_to 'Edit', edit_address_path(address) %></td>
+        <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Address', new_address_path %>

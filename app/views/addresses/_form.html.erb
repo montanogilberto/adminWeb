@@ -1,0 +1,72 @@
+<%= form_with(model: address, local: true) do |form| %>
+  <% if address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+      <% address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :calle %>
+    <%= form.text_field :calle, id: :address_calle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :entre %>
+    <%= form.text_field :entre, id: :address_entre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :entre2 %>
+    <%= form.text_field :entre2, id: :address_entre2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :noExterior %>
+    <%= form.text_field :noExterior, id: :address_noExterior %>
+  </div>
+
+  <div class="field">
+    <%= form.label :noInterior %>
+    <%= form.text_field :noInterior, id: :address_noInterior %>
+  </div>
+
+  <div class="field">
+    <%= form.label :referencia %>
+    <%= form.text_area :referencia, id: :address_referencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.text_field :state_id, id: :address_state_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :town_id %>
+    <%= form.text_field :town_id, id: :address_town_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :towntype_id %>
+    <%= form.text_field :towntype_id, id: :address_towntype_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :township_id %>
+    <%= form.text_field :township_id, id: :address_township_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo_postal_id %>
+    <%= form.text_field :codigo_postal_id, id: :address_codigo_postal_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
