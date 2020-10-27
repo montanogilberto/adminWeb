@@ -1,6 +1,6 @@
 class CreateTowns < ActiveRecord::Migration[5.1]
   def change
-    drop_table :towns
+    drop_table(:towns, if_exists: true)
     create_table :towns do |t|
       t.string :asentamiento
       t.references :township, foreign_key: true

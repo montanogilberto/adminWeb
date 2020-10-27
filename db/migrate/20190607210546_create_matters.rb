@@ -1,6 +1,6 @@
 class CreateMatters < ActiveRecord::Migration[5.1]
   def change
-    drop_table :matters
+    drop_table(:matters, if_exists: true)
     create_table :matters do |t|
       t.string :name
 

@@ -1,6 +1,6 @@
 class CreateExpedients < ActiveRecord::Migration[5.1]
   def change
-    drop_table :expedients, force: :cascade
+    drop_table(:expedients, if_exists: true)
     create_table :expedients do |t|
       t.string :noExpedient
       t.date :year

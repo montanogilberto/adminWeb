@@ -1,6 +1,6 @@
 class CreteTableAddresses < ActiveRecord::Migration[5.1]
   def change
-    drop_table :addresses
+    drop_table(:addresses, if_exists: true)
     create_table :addresses do |t|
       t.string :calle
       t.string :entre

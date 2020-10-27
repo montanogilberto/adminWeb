@@ -1,6 +1,6 @@
 class CreateTableCustomerBlogs < ActiveRecord::Migration[5.1]
   def change
-    drop_table :customer_blogs
+    drop_table(:customer_blogs, if_exists: true)
     create_table :customer_blogs do |t|
       t.string :action
       t.string :new
