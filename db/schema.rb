@@ -10,40 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201025154955) do
+ActiveRecord::Schema.define(version: 20201026201544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accesoasesorias", primary_key: "idacceso", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "accesoasesorias", primary_key: "idacceso", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "clave", limit: 50, comment: "TRIAL"
     t.integer "idusuario", comment: "TRIAL"
     t.integer "accesopago", comment: "TRIAL"
     t.string "trial563", limit: 1, comment: "TRIAL"
   end
 
-  create_table "accesoexpedientesestatales", primary_key: "idacceso", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "accesoexpedientesestatales", primary_key: "idacceso", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 50, comment: "TRIAL"
     t.integer "idusuario", comment: "TRIAL"
     t.integer "accesopago", comment: "TRIAL"
     t.string "trial563", limit: 1, comment: "TRIAL"
   end
 
-  create_table "accesoexpedientesextraju", primary_key: "idacceso", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "accesoexpedientesextraju", primary_key: "idacceso", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 100, comment: "TRIAL"
     t.integer "idusuario", comment: "TRIAL"
     t.integer "accesopago", comment: "TRIAL"
     t.string "trial566", limit: 1, comment: "TRIAL"
   end
 
-  create_table "accesoexpedientesfederales", primary_key: "idacceso", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "accesoexpedientesfederales", primary_key: "idacceso", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 50, comment: "TRIAL"
     t.integer "idusuario", comment: "TRIAL"
     t.integer "accesopago", comment: "TRIAL"
     t.string "trial566", limit: 1, comment: "TRIAL"
   end
 
-  create_table "acciones", primary_key: "idaccion", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "acciones", primary_key: "idaccion", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.text "accion", comment: "TRIAL"
     t.string "materia", limit: 50, comment: "TRIAL"
     t.string "trial570", limit: 1, comment: "TRIAL"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "actuaciones", primary_key: "idactuacion", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "actuaciones", primary_key: "idactuacion", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 50, comment: "TRIAL"
     t.string "tipoactuacion", limit: 50, comment: "TRIAL"
     t.date "fechaactuacion", comment: "TRIAL"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial573", limit: 1, comment: "TRIAL"
   end
 
-  create_table "actuacionesextrajudiciales", primary_key: "idactuacion", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "actuacionesextrajudiciales", primary_key: "idactuacion", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 100, comment: "TRIAL"
     t.string "tipoactuacion", limit: 50, comment: "TRIAL"
     t.date "fechaactuacion", comment: "TRIAL"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial576", limit: 1, comment: "TRIAL"
   end
 
-  create_table "actuacionesfederales", primary_key: "idactuacion", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "actuacionesfederales", primary_key: "idactuacion", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 50, comment: "TRIAL"
     t.string "tipoactuacion", limit: 50, comment: "TRIAL"
     t.date "fechaactuacion", comment: "TRIAL"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial580", limit: 1, comment: "TRIAL"
   end
 
-  create_table "acuerdos", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "acuerdos", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.text "claveacuerdo", comment: "TRIAL"
     t.integer "idweb", comment: "TRIAL"
     t.string "noexpediente", limit: 50, comment: "TRIAL"
@@ -128,14 +128,14 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.index ["township_id"], name: "index_addresses_on_township_id"
   end
 
-  create_table "asentamientos", primary_key: "asentamientoid", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "asentamientos", primary_key: "asentamientoid", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "asentamiento", limit: 50, comment: "TRIAL"
     t.integer "tipoasentamientoid", null: false, comment: "TRIAL"
     t.integer "municipioid", null: false, comment: "TRIAL"
     t.string "trial415", limit: 1, comment: "TRIAL"
   end
 
-  create_table "asesorias", primary_key: "clave", id: :string, limit: 50, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "asesorias", primary_key: "clave", id: :string, limit: 50, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idestado", comment: "TRIAL"
     t.integer "iddistritoju", comment: "TRIAL"
     t.string "organismo", limit: 50, comment: "TRIAL"
@@ -155,7 +155,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial586", limit: 1, comment: "TRIAL"
   end
 
-  create_table "circuitos", primary_key: "idcircuito", id: :integer, comment: "TRIAL", default: nil, force: :cascade, comment: "TRIAL" do |t|
+  create_table "circuitos", primary_key: "idcircuito", id: :integer, default: nil, force: :cascade, comment: "TRIAL" do |t|
     t.string "circuito", limit: 50, comment: "TRIAL"
     t.string "clavecarpeta", limit: 50, comment: "TRIAL"
     t.string "trial589", limit: 1, comment: "TRIAL"
@@ -169,12 +169,12 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.index ["town_id"], name: "index_codigo_postals_on_town_id"
   end
 
-  create_table "codigopostales", primary_key: "codigopostalid", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "codigopostales", primary_key: "codigopostalid", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "codigopostal", limit: 10, null: false, comment: "TRIAL"
     t.integer "asentamientoid", null: false, comment: "TRIAL"
   end
 
-  create_table "contactos", primary_key: "idcontacto", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "contactos", primary_key: "idcontacto", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.text "nombrecontac", comment: "TRIAL"
     t.text "domiciliopart", comment: "TRIAL"
     t.text "domicilionoti", comment: "TRIAL"
@@ -201,12 +201,6 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "field"
     t.integer "user_id"
     t.integer "customer_id"
-  end
-
-  create_table "customer_details", id: :integer, default: -> { "nextval('customerdetails_customerdetailid_seq'::regclass)" }, force: :cascade, comment: "TRIAL" do |t|
-    t.bigint "customer_id", null: false
-    t.bigint "domicilio_id"
-    t.bigint "address_type_id"
   end
 
   create_table "customer_types", force: :cascade do |t|
@@ -238,14 +232,14 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.index ["state_id"], name: "index_districts_on_state_id"
   end
 
-  create_table "distritosjudiciales", primary_key: "iddistritojudicial", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "distritosjudiciales", primary_key: "iddistritojudicial", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "clavedistrito", limit: 50, null: false, comment: "TRIAL"
     t.string "nombredistrito", limit: 50, comment: "TRIAL"
     t.integer "idestado", comment: "TRIAL"
     t.string "trial593", limit: 1, comment: "TRIAL"
   end
 
-  create_table "domicilios", primary_key: "domicilioid", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "domicilios", primary_key: "domicilioid", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "calle", limit: 100, null: false, comment: "TRIAL"
     t.string "entre", limit: 100, comment: "TRIAL"
     t.string "entre2", limit: 100, comment: "TRIAL"
@@ -258,13 +252,13 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.integer "municipioid", comment: "TRIAL"
   end
 
-  create_table "estados", primary_key: "idestado", id: :integer, comment: "TRIAL", default: nil, force: :cascade, comment: "TRIAL" do |t|
+  create_table "estados", primary_key: "idestado", id: :integer, default: nil, force: :cascade, comment: "TRIAL" do |t|
     t.string "estado", limit: 50, comment: "TRIAL"
     t.integer "circuito", comment: "TRIAL"
     t.string "trial596", limit: 1, comment: "TRIAL"
   end
 
-  create_table "expedientes", primary_key: "expediente", id: :string, limit: 50, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "expedientes", primary_key: "expediente", id: :string, limit: 50, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idjuzgado", comment: "TRIAL"
     t.text "actor", comment: "TRIAL"
     t.text "demandado", comment: "TRIAL"
@@ -288,7 +282,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial596", limit: 1, comment: "TRIAL"
   end
 
-  create_table "expedientesextrajudiciales", primary_key: "expediente", id: :string, limit: 100, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "expedientesextrajudiciales", primary_key: "expediente", id: :string, limit: 100, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idestado", comment: "TRIAL"
     t.integer "iddistritoju", comment: "TRIAL"
     t.string "organismo", limit: 50, comment: "TRIAL"
@@ -310,7 +304,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial599", limit: 1, comment: "TRIAL"
   end
 
-  create_table "expedientesfederales", primary_key: "expediente", id: :string, limit: 50, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "expedientesfederales", primary_key: "expediente", id: :string, limit: 50, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idjuzgadofederal", comment: "TRIAL"
     t.integer "idestado", comment: "TRIAL"
     t.integer "idcircuito", comment: "TRIAL"
@@ -334,25 +328,26 @@ ActiveRecord::Schema.define(version: 20201025154955) do
   end
 
   create_table "expedients", force: :cascade do |t|
-    t.string "NoExpedient"
-    t.datetime "year"
+    t.string "noExpedient"
+    t.date "year"
     t.boolean "active"
     t.string "actor"
     t.string "defendant"
-    t.string "customer"
     t.money "fee", scale: 2
     t.money "payment", scale: 2
     t.money "saldo", scale: 2
+    t.bigint "customer_id"
     t.bigint "court_id"
-    t.bigint "state_id"
     t.bigint "district_id"
     t.bigint "act_id"
     t.bigint "matter_id"
     t.bigint "judgment_id"
+    t.bigint "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["act_id"], name: "index_expedients_on_act_id"
     t.index ["court_id"], name: "index_expedients_on_court_id"
+    t.index ["customer_id"], name: "index_expedients_on_customer_id"
     t.index ["district_id"], name: "index_expedients_on_district_id"
     t.index ["judgment_id"], name: "index_expedients_on_judgment_id"
     t.index ["matter_id"], name: "index_expedients_on_matter_id"
@@ -365,7 +360,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "juzgados", primary_key: "idjuzgado", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "juzgados", primary_key: "idjuzgado", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idestado", comment: "TRIAL"
     t.integer "iddistritojudicial", comment: "TRIAL"
     t.integer "idjuzgadobl", comment: "TRIAL"
@@ -380,7 +375,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial602", limit: 1, comment: "TRIAL"
   end
 
-  create_table "juzgadosbuholegal", primary_key: "idjuzgadobl", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "juzgadosbuholegal", primary_key: "idjuzgadobl", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idwebjuzgadobl", null: false, comment: "TRIAL"
     t.text "juzgadobuho", comment: "TRIAL"
     t.string "clavedistrito", limit: 50, comment: "TRIAL"
@@ -389,7 +384,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial606", limit: 1, comment: "TRIAL"
   end
 
-  create_table "juzgadosfederales", primary_key: "idjuzgadofederal", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "juzgadosfederales", primary_key: "idjuzgadofederal", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idestado", comment: "TRIAL"
     t.integer "idjuzgadofederalbl", comment: "TRIAL"
     t.text "direccionjuzfederal", comment: "TRIAL"
@@ -403,7 +398,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial609", limit: 1, comment: "TRIAL"
   end
 
-  create_table "juzgadosfederalesbuhol", primary_key: "idjuzgadofederalbl", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "juzgadosfederalesbuhol", primary_key: "idjuzgadofederalbl", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idwebjuzgadofederalbl", comment: "TRIAL"
     t.text "juzgadofederalbuho", comment: "TRIAL"
     t.integer "idestado", comment: "TRIAL"
@@ -417,20 +412,20 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "municipios", primary_key: "municipioid", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "municipios", primary_key: "municipioid", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "municipio", limit: 100, null: false, comment: "TRIAL"
     t.string "codigo", limit: 5, null: false, comment: "TRIAL"
     t.integer "estadoid", null: false, comment: "TRIAL"
     t.string "trial230", limit: 1, comment: "TRIAL"
   end
 
-  create_table "orgaismosextrajudiciales", primary_key: "idorganismo", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "orgaismosextrajudiciales", primary_key: "idorganismo", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.integer "idestado", comment: "TRIAL"
     t.text "organismo", comment: "TRIAL"
     t.string "trial615", limit: 1, comment: "TRIAL"
   end
 
-  create_table "pagos", primary_key: "idpago", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "pagos", primary_key: "idpago", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 50, comment: "TRIAL"
     t.date "fecha", comment: "TRIAL"
     t.float "importe", comment: "TRIAL"
@@ -439,7 +434,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial619", limit: 1, comment: "TRIAL"
   end
 
-  create_table "pagosasesorias", primary_key: "idpagoasesoria", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "pagosasesorias", primary_key: "idpagoasesoria", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "clave", limit: 50, comment: "TRIAL"
     t.date "fecha", comment: "TRIAL"
     t.float "importe", comment: "TRIAL"
@@ -448,7 +443,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial619", limit: 1, comment: "TRIAL"
   end
 
-  create_table "pagosextrajudiciales", primary_key: "idpagoextrajudicial", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "pagosextrajudiciales", primary_key: "idpagoextrajudicial", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 100, comment: "TRIAL"
     t.date "fecha", comment: "TRIAL"
     t.float "importe", comment: "TRIAL"
@@ -457,7 +452,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial622", limit: 1, comment: "TRIAL"
   end
 
-  create_table "pagosfederales", primary_key: "idpagofederal", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "pagosfederales", primary_key: "idpagofederal", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "expediente", limit: 50, comment: "TRIAL"
     t.date "fecha", comment: "TRIAL"
     t.float "importe", comment: "TRIAL"
@@ -466,7 +461,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.string "trial625", limit: 1, comment: "TRIAL"
   end
 
-  create_table "parametros", primary_key: "idparametro", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "parametros", primary_key: "idparametro", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.text "rutaraizcarpeta", comment: "TRIAL"
     t.string "estado", limit: 50, comment: "TRIAL"
     t.string "distrito", limit: 50, comment: "TRIAL"
@@ -479,13 +474,13 @@ ActiveRecord::Schema.define(version: 20201025154955) do
 
   create_table "states", force: :cascade do |t|
     t.string "estado"
+    t.string "codigo"
     t.string "circuito"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "codigo"
   end
 
-  create_table "sysdiagrams", primary_key: "diagram_id", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "sysdiagrams", primary_key: "diagram_id", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "name", limit: 128, null: false, comment: "TRIAL"
     t.integer "principal_id", null: false, comment: "TRIAL"
     t.integer "version", comment: "TRIAL"
@@ -494,35 +489,35 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.index ["principal_id", "name"], name: "uk_principal_name", unique: true
   end
 
-  create_table "tipoasentamientos", primary_key: "tipoasentamientoid", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "tipoasentamientos", primary_key: "tipoasentamientoid", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "tipoasentamiento", limit: 100, null: false, comment: "TRIAL"
     t.string "codigo", limit: 10, null: false, comment: "TRIAL"
     t.string "trial418", limit: 1, comment: "TRIAL"
   end
 
-  create_table "tiposdeactuaciones", primary_key: "idtipodeactuacion", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "tiposdeactuaciones", primary_key: "idtipodeactuacion", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.text "tipodeactuacion", comment: "TRIAL"
     t.string "trial629", limit: 1, comment: "TRIAL"
   end
 
-  create_table "tiposdeexpedientes", primary_key: "idtipoexpediente", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "tiposdeexpedientes", primary_key: "idtipoexpediente", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "tipodeexpediente", limit: 50, comment: "TRIAL"
     t.integer "idtipoorganismo", comment: "TRIAL"
     t.integer "idwebtipoexpediente", comment: "TRIAL"
     t.string "trial632", limit: 1, comment: "TRIAL"
   end
 
-  create_table "tiposdejuicio", primary_key: "idtipodejuicio", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "tiposdejuicio", primary_key: "idtipodejuicio", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "tipodejucio", limit: 50, comment: "TRIAL"
     t.string "trial635", limit: 1, comment: "TRIAL"
   end
 
-  create_table "tiposdeorganismos", primary_key: "idtipoorganismo", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "tiposdeorganismos", primary_key: "idtipoorganismo", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "nombretipo", limit: 50, comment: "TRIAL"
     t.string "trial635", limit: 1, comment: "TRIAL"
   end
 
-  create_table "tiposdetramites", primary_key: "idtipodetramite", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "tiposdetramites", primary_key: "idtipodetramite", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "tipodetramite", limit: 50, comment: "TRIAL"
     t.string "trial638", limit: 1, comment: "TRIAL"
   end
@@ -565,7 +560,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "usuarios", primary_key: "idusuario", id: :serial, comment: "TRIAL", force: :cascade, comment: "TRIAL" do |t|
+  create_table "usuarios", primary_key: "idusuario", id: :serial, force: :cascade, comment: "TRIAL" do |t|
     t.string "usuario", limit: 50, comment: "TRIAL"
     t.string "clave", limit: 50, comment: "TRIAL"
     t.string "nombre", limit: 50, comment: "TRIAL"
@@ -589,15 +584,12 @@ ActiveRecord::Schema.define(version: 20201025154955) do
   add_foreign_key "actuacionesextrajudiciales", "expedientesextrajudiciales", column: "expediente", primary_key: "expediente", name: "fk_actuacionesextrajudiciales_expedientesextrajudiciales"
   add_foreign_key "actuacionesfederales", "expedientesfederales", column: "expediente", primary_key: "expediente", name: "fk_actuacionesfederales_expedientesfederales"
   add_foreign_key "addresses", "codigo_postals"
-  add_foreign_key "addresses", "states"
   add_foreign_key "addresses", "towns"
   add_foreign_key "addresses", "townships"
   add_foreign_key "asentamientos", "tipoasentamientos", column: "tipoasentamientoid", primary_key: "tipoasentamientoid", name: "fk_asentamientos_tipoasentamientos"
   add_foreign_key "codigo_postals", "towns"
   add_foreign_key "codigopostales", "asentamientos", column: "asentamientoid", primary_key: "asentamientoid", name: "fk_codigopostal_asentamiento"
   add_foreign_key "customer_blogs", "users"
-  add_foreign_key "customer_details", "address_types", name: "FK_customer_details_address_type"
-  add_foreign_key "customer_details", "domicilios", primary_key: "domicilioid", name: "FK_customer_details_domicilios"
   add_foreign_key "customers", "customer_types"
   add_foreign_key "customers", "users"
   add_foreign_key "distritosjudiciales", "estados", column: "idestado", primary_key: "idestado", name: "fk_distritosjudiciales_estados"
@@ -616,6 +608,7 @@ ActiveRecord::Schema.define(version: 20201025154955) do
   add_foreign_key "expedientesfederales", "usuarios", column: "idusuariocreador", primary_key: "idusuario", name: "fk_expedientesfederales_usuarios"
   add_foreign_key "expedients", "acts"
   add_foreign_key "expedients", "courts"
+  add_foreign_key "expedients", "customers"
   add_foreign_key "expedients", "districts"
   add_foreign_key "expedients", "judgments"
   add_foreign_key "expedients", "matters"

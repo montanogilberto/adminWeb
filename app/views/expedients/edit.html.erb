@@ -1,9 +1,6 @@
-<div class="form-row">
-	<div class="form-group col-md-4 mb-3">
-		<h4>Editar Expediente</h4>
-	</div>
-</div>
+<h1>Editing Expedient</h1>
 
 <%= render 'form', expedient: @expedient %>
 
-
+<%= link_to 'Show', @expedient %> |
+<%= link_to 'Back', expedients_path %>

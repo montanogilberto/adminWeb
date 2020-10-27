@@ -1,8 +1,5 @@
 class CreateCustomerBlogs < ActiveRecord::Migration[5.1]
   def change
-    create_table :customer_blogs2 do |t|
-
-      t.timestamps
-    end
+    drop_table :customer_blogs2
   end
 end

@@ -1,5 +1,6 @@
 class CreateTownTypes < ActiveRecord::Migration[5.1]
   def change
+    drop_table :town_types
     create_table :town_types do |t|
       t.string :tipoAsentamiento
       t.string :codigo

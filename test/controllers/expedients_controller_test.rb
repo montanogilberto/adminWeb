@@ -17,7 +17,7 @@ class ExpedientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create expedient" do
     assert_difference('Expedient.count') do
-      post expedients_url, params: { expedient: { NoExpedient: @expedient.NoExpedient, act_id: @expedient.act_id, active: @expedient.active, actor: @expedient.actor, court_id: @expedient.court_id, customer: @expedient.customer, defendant: @expedient.defendant, district_id: @expedient.district_id, fee: @expedient.fee, judgment_id: @expedient.judgment_id, matter_id: @expedient.matter_id, payment: @expedient.payment, saldo: @expedient.saldo, state_id: @expedient.state_id, year: @expedient.year } }
+      post expedients_url, params: { expedient: { act_id: @expedient.act_id, active: @expedient.active, actor: @expedient.actor, court_id: @expedient.court_id, customer_id: @expedient.customer_id, defendant: @expedient.defendant, district_id: @expedient.district_id, fee: @expedient.fee, judgment_id: @expedient.judgment_id, matter_id: @expedient.matter_id, noExpedient: @expedient.noExpedient, payment: @expedient.payment, saldo: @expedient.saldo, year: @expedient.year } }
     end
 
     assert_redirected_to expedient_url(Expedient.last)
@@ -34,7 +34,7 @@ class ExpedientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update expedient" do
-    patch expedient_url(@expedient), params: { expedient: { NoExpedient: @expedient.NoExpedient, act_id: @expedient.act_id, active: @expedient.active, actor: @expedient.actor, court_id: @expedient.court_id, customer: @expedient.customer, defendant: @expedient.defendant, district_id: @expedient.district_id, fee: @expedient.fee, judgment_id: @expedient.judgment_id, matter_id: @expedient.matter_id, payment: @expedient.payment, saldo: @expedient.saldo, state_id: @expedient.state_id, year: @expedient.year } }
+    patch expedient_url(@expedient), params: { expedient: { act_id: @expedient.act_id, active: @expedient.active, actor: @expedient.actor, court_id: @expedient.court_id, customer_id: @expedient.customer_id, defendant: @expedient.defendant, district_id: @expedient.district_id, fee: @expedient.fee, judgment_id: @expedient.judgment_id, matter_id: @expedient.matter_id, noExpedient: @expedient.noExpedient, payment: @expedient.payment, saldo: @expedient.saldo, year: @expedient.year } }
     assert_redirected_to expedient_url(@expedient)
   end
 

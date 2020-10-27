@@ -1,7 +1,7 @@
 <%= form_with(model: expedient, local: true) do |form| %>
   <% if expedient.errors.any? %>
     <div id="error_explanation">
-      <h4><%= pluralize(expedient.errors.count, "error") %> al guardar el registro</h4>
+      <h2><%= pluralize(expedient.errors.count, "error") %> prohibited this expedient from being saved:</h2>
 
       <ul>
       <% expedient.errors.full_messages.each do |message| %>
@@ -10,95 +10,78 @@
       </ul>
     </div>
   <% end %>
-  
-  <div class="form-row">
-    <div class="form-panel col-md-4 mb-3">
-      <%= form.label :NoExpedient, "No Expediente"  %>
-      <%= form.text_field :NoExpedient, id: :expedient_NoExpedient, class: "form-control", required: true %>
-    </div>
 
-    <div class="form-panel col-md-4 mb-3">
-      <%= form.label :year, "Año" %>
-      <%= form.date_select :year, {order: [:year] }, { class: "form-control" } %>
-    </div>
-
-    <div class="form-panel col-md-4 mb-3">
-      <%= form.label :active, "Activo" %>
-      <%= form.check_box :active, id: :expedient_active, class: "form-control", required: true %>
-    </div>
+  <div class="field">
+    <%= form.label :noExpedient %>
+    <%= form.text_field :noExpedient, id: :expedient_noExpedient %>
   </div>
 
-  <div class="form-row">
-    <div class="form-panel col-md-4 mb-3">
-      <%= form.label :actor, "Actor" %>
-      <%= form.text_field :actor, id: :expedient_actor, class: "form-control", required: true %>
-    </div>
-
-    <div class="form-panel col-md-4 mb-3">
-      <%= form.label :defendant, "Defendido" %>
-      <%= form.text_field :defendant, id: :expedient_defendant, class: "form-control", required: true %>
-    </div>
-
-    <div class="form-group col-md-4 mb-3">
-        <%= form.label :customer, "Cliente" %>
-        <%= form.collection_select(:customer_id, Customer.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
-    </div>
-   
-  </div>
-  <div class="form-row">
-    <div class="form-panel col-md-4 mb-3">
-      <%= form.label :fee , "Honorarios"%>
-      <%= form.text_field :fee, id: :expedient_fee, class: "form-control", required: true %>
-    </div>
-
-    <div class="form-panel col-md-4 mb-3">
-      <%= form.label :payment, "Pago" %>
-      <%= form.text_field :payment, id: :expedient_payment, class: "form-control", required: true %>
-    </div>
-
-    <div class="form-panel col-md-4 mb-3">
-      <%= form.label :saldo, "Saldo" %>
-      <%= form.text_field :saldo, id: :expedient_saldo, class: "form-control", required: true %>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-4 mb-3">
-        <%= form.label :court, "Juzgados" %>
-        <%= form.collection_select(:court_id, Court.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
-    </div>  
-
-    <div class="form-group col-md-4 mb-3">
-        <%= form.label :state, "Estado" %>
-        <%= form.collection_select(:state_id, State.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
-    </div>
-
-    <div class="form-group col-md-4 mb-3">
-        <%= form.label :district, "Distrito" %>
-        <%= form.collection_select(:district_id, District.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-4 mb-3">
-        <%= form.label :act, "Accion" %>
-        <%= form.collection_select(:act_id, Act.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
-    </div>
-
-    <div class="form-group col-md-4 mb-3">
-        <%= form.label :matter, "Materia" %>
-        <%= form.collection_select(:matter_id, Matter.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
-    </div>
-
-    <div class="form-group col-md-4 mb-3">
-        <%= form.label :judgment, "Juicio" %>
-        <%= form.collection_select(:judgment_id, Judgment.all, :id, :name,{ include_blank: false }, { class: "form-control" }) %>
-    </div>
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.date_select :year, id: :expedient_year %>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-md-4 mb-3">
-      <%= form.submit "Guardar", class: "btn btn-primary" %>
-      <%= link_to 'Regresar', expedients_path, class: "btn btn-primary" %>
-    </div>
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.check_box :active, id: :expedient_active %>
   </div>
 
+  <div class="field">
+    <%= form.label :actor %>
+    <%= form.text_field :actor, id: :expedient_actor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :defendant %>
+    <%= form.text_field :defendant, id: :expedient_defendant %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fee %>
+    <%= form.text_field :fee, id: :expedient_fee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment %>
+    <%= form.text_field :payment, id: :expedient_payment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saldo %>
+    <%= form.text_field :saldo, id: :expedient_saldo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.text_field :customer_id, id: :expedient_customer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :court_id %>
+    <%= form.text_field :court_id, id: :expedient_court_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :district_id %>
+    <%= form.text_field :district_id, id: :expedient_district_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :act_id %>
+    <%= form.text_field :act_id, id: :expedient_act_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matter_id %>
+    <%= form.text_field :matter_id, id: :expedient_matter_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :judgment_id %>
+    <%= form.text_field :judgment_id, id: :expedient_judgment_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

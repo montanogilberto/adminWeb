@@ -2,8 +2,10 @@
 
 one:
   estado: MyString
+  codigo: MyString
   circuito: MyString
 
 two:
   estado: MyString
+  codigo: MyString
   circuito: MyString

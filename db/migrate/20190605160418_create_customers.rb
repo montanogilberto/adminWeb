@@ -1,5 +1,6 @@
 class CreateCustomers < ActiveRecord::Migration[5.1]
   def change
+    drop table :customers
     create_table :customers do |t|
       t.string :name
       t.string :adress

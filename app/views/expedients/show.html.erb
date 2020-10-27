@@ -1,80 +1,74 @@
-<div class="form-group col-sm-8">  
-  <p>
-    <strong>No Expediente:</strong>
-    <%= @expedient.NoExpedient %>
-  </p>
+<p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Año</strong>
-    <%= @expedient.year.strftime("%Y") %>
-  </p>
+<p>
+  <strong>Noexpedient:</strong>
+  <%= @expedient.noExpedient %>
+</p>
 
-  <p>
-    <strong>Activo</strong>
-    <%= @expedient.active %>
-  </p>
+<p>
+  <strong>Year:</strong>
+  <%= @expedient.year %>
+</p>
 
-  <p>
-    <strong>Actor:</strong>
-    <%= @expedient.actor %>
-  </p>
+<p>
+  <strong>Active:</strong>
+  <%= @expedient.active %>
+</p>
 
-  <p>
-    <strong>Demandado:</strong>
-    <%= @expedient.defendant %>
-  </p>
+<p>
+  <strong>Actor:</strong>
+  <%= @expedient.actor %>
+</p>
 
-  <p>
-    <strong>Cliente:</strong>
-    <%= @expedient.customer %>
-  </p>
+<p>
+  <strong>Defendant:</strong>
+  <%= @expedient.defendant %>
+</p>
 
-  <p>
-    <strong>Honorarios:</strong>
-    <%= @expedient.fee %>
-  </p>
+<p>
+  <strong>Fee:</strong>
+  <%= @expedient.fee %>
+</p>
 
-  <p>
-    <strong>Pago:</strong>
-    <%= @expedient.payment %>
-  </p>
+<p>
+  <strong>Payment:</strong>
+  <%= @expedient.payment %>
+</p>
 
-  <p>
-    <strong>Saldo:</strong>
-    <%= @expedient.saldo %>
-  </p>
+<p>
+  <strong>Saldo:</strong>
+  <%= @expedient.saldo %>
+</p>
 
-  <p>
-    <strong>Juzgado:</strong>
-    <%= @expedient.court.name %>
-  </p>
+<p>
+  <strong>Customer:</strong>
+  <%= @expedient.customer %>
+</p>
 
-  <p>
-    <strong>Estado:</strong>
-    <%= @expedient.state.name %>
-  </p>
+<p>
+  <strong>Court:</strong>
+  <%= @expedient.court %>
+</p>
 
-  <p>
-    <strong>Distrito:</strong>
-    <%= @expedient.district.name %>
-  </p>
+<p>
+  <strong>District:</strong>
+  <%= @expedient.district %>
+</p>
 
-  <p>
-    <strong>Acccion:</strong>
-    <%= @expedient.act.name %>
-  </p>
+<p>
+  <strong>Act:</strong>
+  <%= @expedient.act %>
+</p>
 
-  <p>
-    <strong>Materia:</strong>
-    <%= @expedient.matter.name %>
-  </p>
+<p>
+  <strong>Matter:</strong>
+  <%= @expedient.matter %>
+</p>
 
-  <p>
-    <strong>Tipo Juicio:</strong>
-    <%= @expedient.judgment.name %>
-  </p>
+<p>
+  <strong>Judgment:</strong>
+  <%= @expedient.judgment %>
+</p>
 
-  <%= link_to 'Modificar', edit_expedient_path(@expedient), class: "btn btn-primary" %>  | 
-  <%= link_to 'Regresar', expedients_path, class: "btn btn-primary" %> 
-
-</div>
+<%= link_to 'Edit', edit_expedient_path(@expedient) %> |
+<%= link_to 'Back', expedients_path %>
