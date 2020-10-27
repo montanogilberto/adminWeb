@@ -1,6 +1,6 @@
 class CreateCourts < ActiveRecord::Migration[5.1]
   def change
-    drop_table :courts
+    drop_table(:courts, if_exists: true)
     create_table :courts do |t|
       t.string :name
 
